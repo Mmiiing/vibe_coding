@@ -189,33 +189,14 @@ const ContactForm = () => {
   const labelBase = "text-[9px] font-black text-zinc-600 uppercase tracking-widest mb-2 block";
 
   return (
-    /*
-      Netlify Forms 감지를 위해 hidden form 포함.
-      실제 배포 시 Netlify가 이 hidden form을 빌드 시점에 스캔하여 Form 생성.
-    */
     <>
-      {/* Netlify Bot Field & Form Detection (hidden) */}
-      <form name="vibe-coding-application" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
-        <input type="text" name="name" />
-        <input type="text" name="phone" />
-        <input type="email" name="email" />
-        <input type="text" name="location" />
-        <input type="text" name="affiliation" />
-        <input type="text" name="affiliationType" />
-        <input type="text" name="grade" />
-        <input type="text" name="codingLevel" />
-        <textarea name="motivation" />
-        <select name="interest" />
-        <textarea name="message" />
-        <input type="text" name="bot-field" />
-      </form>
-
       <form onSubmit={handleSubmit}>
-        {/* Honeypot anti-spam */}
+        {/* Netlify Forms 필수 hidden 필드 */}
         <input type="hidden" name="form-name" value="vibe-coding-application" />
-        <div style={{ display: 'none' }}>
-          <label>Don't fill this out: <input name="bot-field" /></label>
-        </div>
+        {/* Honeypot anti-spam (숨김) */}
+        <p style={{ display: 'none' }}>
+          <label>봇 필드: <input name="bot-field" onChange={() => {}} /></label>
+        </p>
 
         <div className="space-y-0 rounded-2xl border border-white/8 bg-zinc-900/30 overflow-hidden">
 
