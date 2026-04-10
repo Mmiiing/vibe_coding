@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vibe-coding</title>
+  </head>
+  <body>
+    <!-- public/index.html의 <body> 안에 추가 -->
+    <form name="vibe-coding-application" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="tel" name="phone" />
+      <input type="email" name="email" />
+      <input type="text" name="location" />
+      <input type="text" name="affiliation" />
+      <input type="text" name="affiliationType" />
+      <input type="text" name="grade" />
+      <input type="text" name="codingLevel" />
+      <select name="interest"></select>
+      <textarea name="motivation"></textarea>
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
